@@ -1,0 +1,20 @@
+POST http://localhost:8000/api/create/author
+Content-Type: application/json
+
+{
+  "name": "Miller",
+  "firstName": "Tim",
+  "birthDate": "1964-10-10"
+}
+
+###
+###
+POST http://localhost:8000/api/create/movie
+Content-Type: application/json
+
+{
+  "title": "Deadpool",
+  "author": 4,
+  "genre": 2,
+  "publishedDate": "2016-09-10"
+}

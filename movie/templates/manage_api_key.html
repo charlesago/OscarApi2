@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de la Clé API</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .key-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .actions {
+            text-align: center;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2471a3;
+        }
+        .message {
+            color: green;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gestion de la Clé API</h1>
+
+    {% if message %}
+        <p class="message">{{ message }}</p>
+    {% endif %}
+
+    <div class="actions">
+        <form method="post">
+            {% csrf_token %}
+
+            <!-- Input pour le nom -->
+            <label for="name">Nom associé à la clé API :</label>
+            <input type="text" id="name" name="name" required>
+
+            <button type="submit" name="send_email">Envoyer par email</button>
+        </form>
+    </div>
+</body>
+</html>
